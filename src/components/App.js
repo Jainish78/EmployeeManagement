@@ -1,14 +1,22 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import React, {useState} from 'react';
+import Home from './Home1';
+import About from './About';
+import Contact from './Contact';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      
+      <div></div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/Contact' element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
