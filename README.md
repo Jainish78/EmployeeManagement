@@ -1,8 +1,8 @@
-# Student Name: Prima Patel(n01417262)
-# Student Name : Jainish Patel(n01419450)
-# Project: Employee Management by The A-team
+## Student Name: Prima Patel(n01417262)
+## Student Name : Jainish Patel(n01419450)
+## Project: Employee Management by The A-team
 
-# Phase-1 with UI and Navigation form controls
+## Phase-1 with UI and Navigation form controls
 
 # Getting Started with Create React App
 
