@@ -21,7 +21,7 @@ const AddEmployeeForm = (props) => {
           placeholder='Add Employee'
           value={value}
           onChange={handleChange}
-        />
+        /> &nbsp;
         <input type='submit' value='Add Employee' />
       </form>
     );

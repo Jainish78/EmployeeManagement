@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Employee = (props) => {
+  
   return (
     <div className='employee'>
       <span className='employee-name'>{props.name}</span>
-      ID: <span> {props.id}</span>
+      <span> {props.id}</span>
       
     </div>
   );

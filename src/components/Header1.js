@@ -3,13 +3,12 @@ import React from 'react';
 
 const Header1 = (props) => {
     return (
-      <header className='header1' >
-          <center>
-          <h1>{props.title}</h1>
-          </center>
-        
-          <span className='stats'>Items: {props.totalEmployees}</span>
-      </header>
+      <div className='header1 row' >
+          <div className='col-5'></div>
+           <div className='col-6 emp-list'> {props.title} </div> 
+           <div className='col-1 emp-total'>Total: {props.totalEmployees}</div>
+           
+      </div>
     );
   };
   

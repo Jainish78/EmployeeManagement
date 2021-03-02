@@ -4,6 +4,8 @@ import Footer from './Footer';
 import Employee from './Employee';
 import Header1 from './Header1';
 import AddEmployeeForm from './AddEmployeeForm';
+// import { Image, View } from 'react-native';
+
 const Home = () =>  {
   const [employee, setEmployee] = useState ([
     {
@@ -15,18 +17,22 @@ const Home = () =>  {
 
   let previd = 0;
   const handleAddEmployee = (name) => {
+    previd = previd +1;
+    console.log("### " + previd);
     setEmployee([
       ...employee,
       {
         name: name, 
-        id: (previd += 1),
+        id: previd,
       },
     ]);
   };
 
   return (
-    <div>
-        
+    <div >
+    
+
+    {/* <Image source={{ uri: "https://img.freepik.com/free-psd/fire-logo_253059-60.jpg?size=626&ext=jpg" }}  />     */}
       <Header title='Employee Management System'/> 
 
      <Header1 title='Employee List' totalEmployees={employee.length-1}/>

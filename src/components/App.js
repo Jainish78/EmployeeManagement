@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
@@ -10,7 +10,8 @@ const App = () => {
   return (
     <BrowserRouter>
       
-      <div></div>
+      <div>
+        </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
