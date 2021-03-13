@@ -4,6 +4,9 @@ import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
+const connectDB = require('./config/connectDB');
+connectDB();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
