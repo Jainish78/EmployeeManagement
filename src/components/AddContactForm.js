@@ -1,15 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import {Link} from 'react-router-dom';
-const Contact = () => {
+
+const AddContactForm = (props) => {
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
 
-  const handleValueChange = (e) => {
+  const handleValueChange1 = (e) => {
     setFname(e.target.value );
   };
 
@@ -17,15 +15,15 @@ const Contact = () => {
     setLname(e.target.value );
   };
 
-  const handleItem1ValueChange = (e) => {
+  const handleItem1ValueChange1 = (e) => {
     setEmail(e.target.value );
   };
 
-  const handleItem2ValueChange = (e) => {
+  const handleItem2ValueChange1 = (e) => {
     setSubject(e.target.value );
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit1 = async (e) => {
     e.preventDefault();
     if (fname === '') return;
     let token = localStorage.getItem('token');
@@ -43,7 +41,7 @@ const Contact = () => {
     }
     try{
       const response = await axios.post('http://localhost:5001/api/contacts', data,config);
-      console.log('Contact Form submitted successfully.',response)
+      console.log('Contact Form Submitted',response)
     }
     catch(e)
 {
@@ -56,18 +54,13 @@ const Contact = () => {
    
   };
 
-    //  props.addEmployee(value);
-    //  setLists('');
+    // props.addEmployee(value);
+    // setLists('');
   
     return (
       <div>
-        <Header title='Employee Management System'/>
-        <center>
-           <h2 className='contact'> Let's Connect </h2>
-          <p className='contact'> We would love to help you. </p><br/>
-      <div className=''>Contact us</div>
       
-      <form onSubmit={handleSubmit} className='Contact'>
+      <form onSubmit={handleSubmit1} className='addContactform'>
         <br></br>
        
         <input
@@ -75,16 +68,14 @@ const Contact = () => {
           type='text'
           placeholder='Enter First Name'
           value={fname}
-          required
-          onChange={handleValueChange}
+          onChange={handleValueChange1}
         /> <br/>
 
-<input
+        <input
           
           type='text'
           placeholder='Enter Last Name'
           value={lname}
-          required
           onChange={handleValueChange1}
         /> <br/>
         
@@ -92,7 +83,7 @@ const Contact = () => {
               type='text'
               placeholder='Enter Email'
               value={email}
-              onChange={handleItem1ValueChange}
+              onChange={handleItem1ValueChange1}
             /><br/>
           
           
@@ -100,26 +91,15 @@ const Contact = () => {
               type='text'
               placeholder='Enter Subject'
               value={subject}
-              required
-              onChange={handleItem2ValueChange}
+              onChange={handleItem2ValueChange1}
             /> <br/> <br/>
           
-        {/* <input className='addSubmit' type='submit' value='Submit' /> */}
-        <Link 
-    className="btn btn-secondary btn-width-200 search-submit" 
-    to={{pathname: '/contactview'}}>
-     Submit
-
-</Link>
-        
+        <input className='addSubmit' type='submit' value='submit' />
       </form>
-      </center>
-      <Footer/>
-
           </div>
-      
+
     );
   }
 
 
-export default Contact;
+export default AddContactForm;

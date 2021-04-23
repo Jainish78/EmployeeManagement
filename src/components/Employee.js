@@ -1,14 +1,14 @@
-import React from 'react';
+// import React from 'react';
 
-const Employee = (props) => {
+// const Employee = (props) => {
   
-  return (
-    <div className='employee'>
-      <span className='employee-name'>{props.name}</span>
-      <span> {props.id}</span>
+//   return (
+//     <div className='employee'>
+//       <span className='employee-name'>{props.name}</span>
+//       <span> {props.id}</span>
       
-    </div>
-  );
-};
+//     </div>
+//   );
+// };
 
-export default Employee;
+// export default Employee;

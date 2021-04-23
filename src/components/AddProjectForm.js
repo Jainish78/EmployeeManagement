@@ -1,21 +1,21 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-const AddEmployeeForm = () => {
+const AddProjectForm = () => {
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [salary, setSalary] = useState('');
+  const [detail, setDetail] = useState('');
+  const [duration, setDuration] = useState('');
 
   const handleValueChange = (e) => {
     setName(e.target.value );
   };
 
   const handleItem1ValueChange = (e) => {
-    setEmail(e.target.value );
+    setDetail(e.target.value );
   };
 
   const handleItem2ValueChange = (e) => {
-    setSalary(e.target.value );
+    setDuration(e.target.value );
   };
 
   const handleSubmit = async (e) => {
@@ -30,20 +30,20 @@ const AddEmployeeForm = () => {
     }
     let data = {
       "name": name,
-      "email": email,
-      "salary": salary
+      "detail": detail,
+      "duration": duration
     }
     try{
-      const response = await axios.post('http://localhost:5001/api/employees', data,config);
-      console.log('Employee added',response)
+      const response = await axios.post('http://localhost:5001/api/projects', data,config);
+      console.log('Project added',response)
     }
     catch(e)
 {
   console.log(e.response.data.errors)
 } 
    setName('');
-    setEmail('');
-    setSalary('');
+    setDetail('');
+    setDuration('');
    
   };
 
@@ -52,34 +52,34 @@ const AddEmployeeForm = () => {
   
     return (
       <div>
-      <div className='add-employee'>Add Employee</div>
-      <form onSubmit={handleSubmit} className='addEmployeeform'>
+      <div className='add-project'>Add Project</div>
+      <form onSubmit={handleSubmit} className='addProjectform'>
         <br></br>
        
         <input
           
           type='text'
-          placeholder='Enter Employee Name'
+          placeholder='Enter Project Name'
           value={name}
           onChange={handleValueChange}
         /> <br/>
         
             <input
               type='text'
-              placeholder='Enter Email'
-              value={email}
+              placeholder='Enter Details'
+              value={detail}
               onChange={handleItem1ValueChange}
             /><br/>
           
           
             <input
               type='text'
-              placeholder='Enter Employee Salary'
-              value={salary}
+              placeholder='Enter Project Duration'
+              value={duration}
               onChange={handleItem2ValueChange}
             /> <br/> <br/>
           
-        <input className='addSubmit' type='submit' value='Add Employee' />
+        <input className='addSubmit' type='submit' value='Add Project' />
       </form>
           </div>
 
@@ -87,4 +87,4 @@ const AddEmployeeForm = () => {
   }
 
 
-export default AddEmployeeForm;
+export default AddProjectForm;
