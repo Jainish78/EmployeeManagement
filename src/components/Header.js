@@ -13,7 +13,7 @@ const Header = (props) => {
   <div className='col-2'>
   <img
     alt=""
-    src="assets/logo.png"
+    src="assets/logo.jpg"
     width="175"
     height="95"
     className="logo"
