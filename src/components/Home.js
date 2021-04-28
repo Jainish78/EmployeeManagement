@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Employee from './Employee';
@@ -11,6 +11,7 @@ import * as ReactBootStrap from "react-bootstrap";
 import JsonApi from './JsonApi';
 import {Table} from 'react-bootstrap';
 import {ListGroupItem, ListGroup} from 'reactstrap';
+import AuthContext from '../contexts/AuthContext';
 
 
 // import { Image, View } from 'react-native';
@@ -39,7 +40,7 @@ const Home = () =>  {
 
  
 
-
+  const auth = useContext(AuthContext);
   return (
     <div >
     
@@ -48,7 +49,8 @@ const Home = () =>  {
       <Header title='Employee Management System'/> 
 
      <Header1 title='Employee List' />
-     <NavLink to='/addemployee' > <h4 className='addemployee'>Add Employee</h4></NavLink> 
+     {auth.isLoggedIn && (
+     <NavLink to='/addemployee' > <h4 className='addemployee'>Add Employee</h4></NavLink> )}
      <ListGroup>
       <ListGroupItem className="d-flex"> 
       
