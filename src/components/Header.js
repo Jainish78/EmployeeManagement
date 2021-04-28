@@ -11,23 +11,16 @@ const Header = (props) => {
   return (
  <div className='header row'>
   <div className='col-2'>
-  <img
-    alt=""
-    src="assets/logo.jpg"
-    width="175"
-    height="95"
-    className="logo"
-    float="left"
-  />
+  <p className='logo'>EMS</p>
   </div>
-  <div className='col-6 header-title'>
+  <div className='col-7 header-title'>
         <h1>{props.title}</h1>
   </div>
 
 
   <div  className='header-nav row'>
        <span > <NavLink to='/' className='col-1 a'>Home</NavLink> </span>
-       <span ><NavLink to='/about'className='col-1 a'>About</NavLink> </span>
+       <span ><NavLink to='/about'className='col-0.5 a'>About</NavLink> </span>
        <span ><NavLink to='/contact'className='col-1 a'>Contact</NavLink> </span>
        {auth.isLoggedIn && (
        

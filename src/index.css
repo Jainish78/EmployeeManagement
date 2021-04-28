@@ -345,6 +345,18 @@ input[type=submit]:hover {
 
 }
 
+.logo{
+  font-size: xx-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #42b2df;
+  padding-top: 25px;
+  padding-left: 20px;
+}
+
+.addemployee{
+  padding-left: 20px;
+
+}
 /*Employee Details*/
 
 /* .employee-details{

@@ -48,7 +48,7 @@ const Home = () =>  {
       <Header title='Employee Management System'/> 
 
      <Header1 title='Employee List' />
-     <NavLink to='/addemployee'> <h4>Add Employee</h4></NavLink> 
+     <NavLink to='/addemployee' > <h4 className='addemployee'>Add Employee</h4></NavLink> 
      <ListGroup>
       <ListGroupItem className="d-flex"> 
       
